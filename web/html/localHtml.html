@@ -14,17 +14,29 @@
 						<span class="menu-icon fa fa-folder"></span>新建项目
 				  </button>
 			</div>
+
+			<div class="btn-group btn-group-sm">
+				  <button data-toggle="dropdown" class="btn btn-success" aria-expanded="false" id="userManage"
+						  style="left: 10px;bottom: 5px;">
+						<span class="glyphicon glyphicon-user"></span>用户名
+						<i class="ace-icon fa fa-angle-down icon-on-right"></i>
+				  </button>
+				  <ul class="dropdown-menu user"></ul>
+			</div>
 	  </div>
+	  <!--表格控件-->
 	  <div class="col-xs-12">
 			<div class="table-header">项目管理</div>
 			<div>
-				  <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+				  <table id="dynamic-table" class="table table-striped table-bordered table-hover display"
+						 cellspacing="0" width="100%">
 						<thead>
 						<tr>
-							  <th id="name">序号</th>
-							  <th id="position">项目名</th>
-							  <th id="office">时间</th>
-							  <th id="extn">备注</th>
+							  <th id="id">序号</th>
+							  <th id="projectUser">用户名</th>
+							  <th id="projectName">项目名</th>
+							  <th id="createDate">时间</th>
+							  <th id="memo">备注</th>
 							  <th>操作</th>
 						</tr>
 						</thead>
