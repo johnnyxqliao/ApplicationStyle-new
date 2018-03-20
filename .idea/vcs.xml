@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$USER_HOME$/Desktop/projectManager" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="E:\xjtu\IdeaProject\ApplicationStyle\ApplicationStyle" vcs="Git" />
   </component>
 </project>

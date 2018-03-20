@@ -6,6 +6,9 @@
 	  <meta name="description" content="overview &amp; stats"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <!--获取服务器页面样式-->
+	  <link rel="import" id="frame" href="/webresources/common/html/appFrame.html">
+	  <link rel="import" id="local" href="html/localHtml.html">
 	  <!--前台css和js-->
 	  <link rel="stylesheet" href="/webresources/ace-master/assets/css/bootstrap.min.css"/>
 	  <link rel="stylesheet" href="/webresources/ace-master/assets/css/ace.min.css"/>
@@ -13,7 +16,8 @@
 	  <link rel="stylesheet" href="/webresources/ace-master/assets/css/ace-rtl.min.css"/>
 	  <link rel="stylesheet" href="/webresources/ace-master/assets/css/ace-skins.min.css"/>
 	  <link rel="stylesheet" href="/webresources/ace-master/assets/css/fonts.googleapis.com.css"/>
-	  <link rel="stylesheet" href="css/Extra.css"/>
+	  <link rel="stylesheet" href="/webresources/common/css/Extra.css"/>
+	  <link rel="stylesheet" href="/webresources/common/css/searchStyle.css"/>
 	  <script type="text/javascript" src="/webresources/ace-master/assets/js/ace-extra.min.js"></script>
 	  <script type="text/javascript" src="/webresources/ace-master/assets/js/jquery-2.1.4.min.js"></script>
 	  <script type="text/javascript" src="/webresources/ace-master/assets/js/ace.min.js"></script>
@@ -25,9 +29,11 @@
 	  <script type="text/javascript" src="/webresources/ace-master/assets/js/ace-elements.min.js"></script>
 	  <script type="text/javascript" src="/webresources/ace-master/assets/js/jquery.mobile.custom.min.js"></script>
 	  <script type="text/javascript" src="/webresources/common/js/userLogin.js"></script>
-	  <!--获取服务器页面样式-->
-	  <link rel="import" id="frame" href="/webresources/common/html/appFrame.html">
-	  <link rel="import" id="local" href="html/localHtml.html">
+	  <script type="text/javascript" src="/webresources/common/js/fuzzySearch.js"></script>
+	  <script type="text/javascript" src="/webresources/common/js/table.js"></script>
+	  <script type="text/javascript" src="/webresources/common/js/wordEdit.js"></script>
+	  <script type="text/javascript" src="./js/buttonAction.js"></script>
+
 </head>
 <body class="no-skin">
 <!--嵌入导航栏-->
@@ -39,15 +45,30 @@
 			<!--嵌入面包屑-->
 			<div class="breadcrumbs ace-save-state" id="breadcrumbs"></div>
 			<!--侧边栏对应内容-->
-			<div class="tab-content">
+			<div class="tab-content" style="border: 0px;margin: auto;">
 				  <!--项目管理-->
-				  <div class="tab-pane active" id="projectManagementDiv"></div>
-				  <!--主功能区-->
-				  <div class="tab-pane" id="mainFunctionDiv"></div>
-				  <!--word编辑区-->
-				  <div class="tab-pane" id="wordEditDiv"></div>
-				  <!--帮助页面-->
-				  <div class="tab-pane" id="helpDiv"></div>
+				  <div class="tab-pane" id="projectManagementDiv"></div>
+			</div>
+			<div class="row">
+				  <div class="col-sm-6">
+						<div class="tabbable">
+							  <ul class="nav nav-tabs" id="myTab">
+									<li class="active">
+										  <a data-toggle="tab" href="#mainFunctionDiv" id="mainFunctionBar"><i
+											  class="green ace-icon fa fa-desktop bigger-120"></i>功能界面</a>
+									</li>
+
+									<li>
+										  <a data-toggle="tab" href="#wordEditDiv"><i
+											  class="purple ace-icon fa fa-pencil-square-o bigger-120"></i>报告编辑</a>
+									</li>
+							  </ul>
+							  <div class="tab-content" id="pageContent">
+									<div class="tab-pane active" id="mainFunctionDiv"></div>
+									<div class="tab-pane" id="wordEditDiv"></div>
+							  </div>
+						</div>
+				  </div>
 			</div>
 	  </div>
 	  <!--footer-->
@@ -55,9 +76,5 @@
 </div>
 <!--模态框-->
 <div id="modalFrameDiv"></div>
-<script type="text/javascript" src="./js/buttonAction.js"></script>
-<script type="text/javascript" src="./js/resultReport.js"></script>
-<script type="text/javascript" src="./js/groupCheck.js"></script>
-
 </body>
 </html>
